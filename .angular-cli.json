@@ -1,13 +1,16 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "angular2-json-schema-form"
+    "name": "angular2-json-schema-form-gabe"
   },
   "apps": [
     {
       "root": "src/demo",
       "outDir": "dist/demo",
-      "assets": [ "assets", "favicon.ico" ],
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
       "index": "index.html",
       "main": "main.ts",
       "polyfills": "polyfills.ts",
@@ -15,8 +18,10 @@
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "",
-      "styles": [ "styles.scss" ],
-      "scripts": [ ],
+      "styles": [
+        "styles.scss"
+      ],
+      "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
@@ -25,13 +30,19 @@
     }
   ],
   "e2e": {
-    "protractor": { "config": "./protractor.conf.js" }
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
   },
   "test": {
-    "karma": { "config": "./karma.conf.js" }
+    "karma": {
+      "config": "./karma.conf.js"
+    }
   },
   "defaults": {
     "styleExt": "scss",
-    "component": { "flat": true }
+    "component": {
+      "flat": true
+    }
   }
 }
