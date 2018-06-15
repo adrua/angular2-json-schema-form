@@ -10,6 +10,7 @@ import { JsonSchemaFormService } from '../../json-schema-form.service';
       [class]="options?.htmlClass || ''"
       [floatPlaceholder]="options?.floatPlaceholder || (options?.notitle ? 'never' : 'auto')"
       [style.width]="'100%'">
+      <mat-label [textContent]="options?.title" *ngIf="options?.title"></mat-label>
       <span matPrefix *ngIf="options?.prefix || options?.fieldAddonLeft"
         [innerHTML]="options?.prefix || options?.fieldAddonLeft"></span>
       <input matInput *ngIf="boundControl"
@@ -20,7 +21,7 @@ import { JsonSchemaFormService } from '../../json-schema-form.service';
         [attr.step]="options?.multipleOf || options?.step || 'any'"
         [id]="'control' + layoutNode?._id"
         [name]="controlName"
-        [placeholder]="options?.notitle ? options?.placeholder : options?.title"
+        [placeholder]="options?.placeholder ? options?.placeholder : ''"
         [readonly]="options?.readonly ? 'readonly' : null"
         [required]="options?.required"
         [style.width]="'100%'"
@@ -34,7 +35,7 @@ import { JsonSchemaFormService } from '../../json-schema-form.service';
         [disabled]="controlDisabled"
         [id]="'control' + layoutNode?._id"
         [name]="controlName"
-        [placeholder]="options?.notitle ? options?.placeholder : options?.title"
+        [placeholder]="options?.placeholder ? options?.placeholder : ''"
         [readonly]="options?.readonly ? 'readonly' : null"
         [required]="options?.required"
         [style.width]="'100%'"
@@ -80,9 +81,7 @@ export class MaterialNumberComponent implements OnInit {
     this.options = this.layoutNode.options || {};
     this.jsf.initializeControl(this);
     if (this.layoutNode.dataType === 'integer') { this.allowDecimal = false; }
-    if (!this.options.notitle && !this.options.description && this.options.placeholder) {
-      this.options.description = this.options.placeholder;
-    }
+
   }
 
   updateValue(event) {
