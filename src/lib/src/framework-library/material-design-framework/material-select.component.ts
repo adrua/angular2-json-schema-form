@@ -11,6 +11,7 @@ import { buildTitleMap, isArray } from '../../shared';
       [class]="options?.htmlClass || ''"
       [floatPlaceholder]="options?.floatPlaceholder || (options?.notitle ? 'never' : 'auto')"
       [style.width]="'100%'">
+      <mat-label [textContent]="options?.title" *ngIf="options?.title"></mat-label>
       <span matPrefix *ngIf="options?.prefix || options?.fieldAddonLeft"
         [innerHTML]="options?.prefix || options?.fieldAddonLeft"></span>
       <mat-select *ngIf="boundControl"
@@ -19,7 +20,7 @@ import { buildTitleMap, isArray } from '../../shared';
         [attr.name]="controlName"
         [id]="'control' + layoutNode?._id"
         [multiple]="options?.multiple"
-        [placeholder]="options?.notitle ? options?.placeholder : options?.title"
+        [placeholder]="options?.placeholder ? options?.placeholder : ''"
         [required]="options?.required"
         [style.width]="'100%'"
         (blur)="options.showErrors = true">
@@ -43,7 +44,7 @@ import { buildTitleMap, isArray } from '../../shared';
         [disabled]="controlDisabled || options?.readonly"
         [id]="'control' + layoutNode?._id"
         [multiple]="options?.multiple"
-        [placeholder]="options?.notitle ? options?.placeholder : options?.title"
+        [placeholder]="options?.placeholder ? options?.placeholder : ''"
         [required]="options?.required"
         [style.width]="'100%'"
         [value]="controlValue"
