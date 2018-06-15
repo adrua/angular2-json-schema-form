@@ -103,9 +103,6 @@ export class MaterialSelectComponent implements OnInit {
       this.options.enum, !!this.options.required, !!this.options.flatList
     );
     this.jsf.initializeControl(this, !this.options.readonly);
-    if (!this.options.notitle && !this.options.description && this.options.placeholder) {
-      this.options.description = this.options.placeholder;
-    }
   }
 
   updateValue(event) {
