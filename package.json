@@ -1,6 +1,6 @@
 {
   "name": "angular2-json-schema-form-gabe",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "author": {
     "name": "Gabriel Martinez Bustos",
     "email": "jei.sum41@gmail.com"
@@ -62,7 +62,7 @@
     "@angular/cdk": ">=5.0.0",
     "@angular/common": ">=4.0.0",
     "@angular/core": ">=4.0.0",
-    "@angular/flex-layout": ">=2.0.0",
+    "@angular/flex-layout": "5.0.0-beta.15",
     "@angular/forms": ">=4.0.0",
     "@angular/material": ">=5.0.0",
     "@angular/platform-browser": ">=4.0.0",
@@ -76,7 +76,7 @@
     "@angular/compiler": "^5.2.1",
     "@angular/compiler-cli": "^5.2.1",
     "@angular/core": "^5.2.1",
-    "@angular/flex-layout": "2.0.0-beta.12",
+    "@angular/flex-layout": "5.0.0-beta.15",
     "@angular/forms": "^5.2.1",
     "@angular/http": "^5.2.1",
     "@angular/language-service": "^5.2.1",

@@ -29,7 +29,6 @@ import { JsonSchemaFormService } from '../../json-schema-form.service';
         [style.align-items]="getFlexAttribute('align-items')"
         [style.align-content]="getFlexAttribute('align-content')"
         [fxLayout]="options?.fxLayout"
-        [fxLayoutWrap]="options?.fxLayoutWrap"
         [fxLayoutGap]="options?.fxLayoutGap"
         [fxLayoutAlign]="options?.fxLayoutAlign"
         [attr.fxFlexFill]="options?.fxLayoutAlign"></flex-layout-root-widget>
@@ -60,7 +59,6 @@ import { JsonSchemaFormService } from '../../json-schema-form.service';
         [style.align-items]="getFlexAttribute('align-items')"
         [style.align-content]="getFlexAttribute('align-content')"
         [fxLayout]="options?.fxLayout"
-        [fxLayoutWrap]="options?.fxLayoutWrap"
         [fxLayoutGap]="options?.fxLayoutGap"
         [fxLayoutAlign]="options?.fxLayoutAlign"
         [attr.fxFlexFill]="options?.fxLayoutAlign"></flex-layout-root-widget>
@@ -94,7 +92,6 @@ import { JsonSchemaFormService } from '../../json-schema-form.service';
             [style.align-items]="getFlexAttribute('align-items')"
             [style.align-content]="getFlexAttribute('align-content')"
             [fxLayout]="options?.fxLayout"
-            [fxLayoutWrap]="options?.fxLayoutWrap"
             [fxLayoutGap]="options?.fxLayoutGap"
             [fxLayoutAlign]="options?.fxLayoutAlign"
             [attr.fxFlexFill]="options?.fxLayoutAlign"></flex-layout-root-widget>
@@ -132,7 +129,6 @@ import { JsonSchemaFormService } from '../../json-schema-form.service';
           [style.align-items]="getFlexAttribute('align-items')"
           [style.align-content]="getFlexAttribute('align-content')"
           [fxLayout]="options?.fxLayout"
-          [fxLayoutWrap]="options?.fxLayoutWrap"
           [fxLayoutGap]="options?.fxLayoutGap"
           [fxLayoutAlign]="options?.fxLayoutAlign"
           [attr.fxFlexFill]="options?.fxLayoutAlign"></flex-layout-root-widget>
