@@ -17,11 +17,18 @@ import { hasValue, JsonPointer } from '../../shared';
       [fxFlexOrder]="layoutNode?.options?.fxFlexOrder"
       [fxFlexOffset]="layoutNode?.options?.fxFlexOffset"
       [fxFlexAlign]="layoutNode?.options?.fxFlexAlign">
-      <select-framework-widget *ngIf="showWidget(layoutNode)"
+      <select-framework-widget *ngIf="showWidget(layoutNode)" [ngClass]="{ disabledSelect: disabledWidget(layoutNode) }"
         [dataIndex]="layoutNode?.arrayItem ? (dataIndex || []).concat(i) : (dataIndex || [])"
         [layoutIndex]="(layoutIndex || []).concat(i)"
         [layoutNode]="layoutNode"></select-framework-widget>
     <div>`,
+    styles: [`
+    .disabledSelect {
+      pointer-events: none;
+      opacity: 0.4;  
+    }
+    `
+  ],
   changeDetection: ChangeDetectionStrategy.Default,
 })
 export class FlexLayoutRootComponent {
@@ -48,5 +55,9 @@ export class FlexLayoutRootComponent {
 
   showWidget(layoutNode: any): boolean {
     return this.jsf.evaluateCondition(layoutNode, this.dataIndex);
+  }
+
+  disabledWidget(layoutNode: any): boolean {
+    return this.jsf.evaluateAttribute('disabledBlock', false, layoutNode, this.dataIndex);
   }
 }

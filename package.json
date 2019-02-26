@@ -1,9 +1,9 @@
 {
-  "name": "angular2-json-schema-form-gabe",
-  "version": "0.0.11",
+  "name": "angular2-json-schema-form-adrua",
+  "version": "0.0.12",
   "author": {
-    "name": "Gabriel Martinez Bustos",
-    "email": "jei.sum41@gmail.com"
+    "name": "Adalberto Raul Rua Aguirre",
+    "email": "adrua@hotmail.com"
   },
   "description": "Angular JSON Schema Form builder",
   "keywords": [
@@ -23,15 +23,15 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jeisux92/angular2-json-schema-form"
+    "url": "git+https://github.com/adrua/angular2-json-schema-form"
   },
   "bugs": {
-    "url": "https://github.com/jeisux92/angular2-json-schema-form/issues"
+    "url": "https://github.com/adrua/angular2-json-schema-form/issues"
   },
-  "main": "./bundles/angular2-json-schema-form-gabe.umd.js",
-  "module": "./angular2-json-schema-form-gabe.es5.js",
-  "es2015": "./angular2-json-schema-form-gabe.js",
-  "typings": "./angular2-json-schema-form-gabe.d.ts",
+  "main": "./bundles/angular2-json-schema-form-adrua.umd.js",
+  "module": "./angular2-json-schema-form-adrua.es5.js",
+  "es2015": "./angular2-json-schema-form-adrua.js",
+  "typings": "./angular2-json-schema-form-adrua.d.ts",
   "engines": {
     "node": ">= 6.9.0",
     "npm": ">= 3.0.0"

@@ -11,6 +11,10 @@ A [JSON Schema](http://json-schema.org) Form builder for Angular 4 and 5, simila
 
 Note: This is currently a personal proof-of-concept project, and is not affiliated with any of the organizations listed above. (Though they are all awesome, and totally worth checking out.)
 
+## Breaking change in version 0.0.13 and above
+
+Dynamic Attribute stored to function at first use. disabled and disabledBlock now Support function Body 
+
 ## Breaking change in version 0.7.0-alpha.1 and above
 
 You must now import both JsonSchemaFormModule and a framework module. (Don't worry, it's easy.)

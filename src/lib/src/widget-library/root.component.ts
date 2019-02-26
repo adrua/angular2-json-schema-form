@@ -18,7 +18,7 @@ import { hasValue, JsonPointer } from '../shared';
         [layoutIndex]="(layoutIndex || []).concat(i)"
         [layoutNode]="layoutItem"
         [orderable]="isDraggable(layoutItem)">
-        <select-framework-widget *ngIf="showWidget(layoutItem)"
+        <select-framework-widget *ngIf="showWidget(layoutItem)" [ngClass]="{ disabledSelect: disabledWidget(layoutItem) }"
           [dataIndex]="layoutItem?.arrayItem ? (dataIndex || []).concat(i) : (dataIndex || [])"
           [layoutIndex]="(layoutIndex || []).concat(i)"
           [layoutNode]="layoutItem"></select-framework-widget>
@@ -44,6 +44,10 @@ import { hasValue, JsonPointer } from '../shared';
     [draggable=true].drag-target-bottom {
       box-shadow: 0 2px 0 #000;
       position: relative; z-index: 20;
+    }
+    .disabledSelect {
+      pointer-events: none;
+      opacity: 0.4;  
     }
   `],
 })
@@ -74,5 +78,9 @@ export class RootComponent {
 
   showWidget(layoutNode: any): boolean {
     return this.jsf.evaluateCondition(layoutNode, this.dataIndex);
+  }
+
+  disabledWidget(layoutNode: any): boolean {
+    return this.jsf.evaluateAttribute('disabled', false, layoutNode, this.dataIndex);
   }
 }

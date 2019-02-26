@@ -14,8 +14,8 @@
   "angularCompilerOptions": {
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
-    "flatModuleOutFile": "angular2-json-schema-form-gabe.js",
-    "flatModuleId": "angular2-json-schema-form-gabe",
+    "flatModuleOutFile": "angular2-json-schema-form-adrua.js",
+    "flatModuleId": "angular2-json-schema-form-adrua",
     "genDir": "../../out-ngc/lib-gen-dir/"
   }
 }

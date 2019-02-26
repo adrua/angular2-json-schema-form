@@ -392,11 +392,17 @@ export class JsonSchemaFormService {
   }
 
   evaluateCondition(layoutNode: any, dataIndex: number[]): boolean {
+    return this.evaluateAttribute('condition', true, layoutNode, dataIndex,);
+  }
+
+  evaluateAttribute(attribute: string, defaultValue: any, layoutNode: any, dataIndex: number[]): boolean {
     const arrayIndex = dataIndex && dataIndex[dataIndex.length - 1];
-    let result = true;
-    if (hasValue((layoutNode.options || {}).condition)) {
-      if (typeof layoutNode.options.condition === 'string') {
-        let pointer = layoutNode.options.condition
+    let result = defaultValue;
+    attribute = attribute || 'condition';
+
+    if (hasValue((layoutNode.options || {})[attribute])) {
+      if (typeof layoutNode.options[attribute] === 'string') {
+        let pointer = layoutNode.options[attribute]
         if (hasValue(arrayIndex)) {
           pointer = pointer.replace('[arrayIndex]', `[${arrayIndex}]`);
         }
@@ -405,17 +411,22 @@ export class JsonSchemaFormService {
         if (!result && pointer[0] === 'model') {
           result = !!JsonPointer.get({ model: this.data }, pointer);
         }
-      } else if (typeof layoutNode.options.condition === 'function') {
-        result = layoutNode.options.condition(this.data);
-      } else if (typeof layoutNode.options.condition.functionBody === 'string') {
+      } else if (typeof layoutNode.options[attribute] === 'boolean') {
+        result = layoutNode.options[attribute];
+      } else if (typeof layoutNode.options[attribute] === 'number') {
+        result = layoutNode.options[attribute];
+      } else if (typeof layoutNode.options[attribute] === 'function') {
+        result = layoutNode.options[attribute](this.data);
+      } else if (typeof layoutNode.options[attribute].functionBody === 'string') {
         try {
           const dynFn = new Function(
-            'model', 'arrayIndices', layoutNode.options.condition.functionBody
+            'model', 'arrayIndices', layoutNode.options[attribute].functionBody
           );
+          layoutNode.options[attribute] = dynFn;
           result = dynFn(this.data, dataIndex);
         } catch (e) {
           result = true;
-          console.error("condition functionBody errored out on evaluation: " + layoutNode.options.condition.functionBody);
+          console.error(attribute + " functionBody errored out on evaluation: " + layoutNode.options[attribute].functionBody);
         }
       }
     }
